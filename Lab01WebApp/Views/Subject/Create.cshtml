@@ -1,0 +1,24 @@
+﻿@model Lab01Lib.Subject
+@{
+    ViewData["title"] = "Create";
+}
+<div class="form-group">
+    <h3>Create new Subject</h3>
+    <form asp-action="Create" asp-controller="Subject" method="POST">
+    <div class="form-control">
+        <label asp-for="Code">Enter code:</label>
+            <input asp-for="Code"placeholder="Enter subject code"/>
+    </div>
+    <div class="form-control">
+            <label asp-for="Name">Enter Name:</label>
+            <input asp-for="Name" placeholder="Enter subject Name" />
+    </div>
+    <div class="form-control">
+            <label asp-for="Fee">Enter Fee:</label>
+            <input asp-for="Fee" placeholder="Enter subject Fee" />
+    </div>
+        <div>
+            <input type="submit" value="Create" class="btn-primary" />
+        </div>
+    </form>
+</div>
