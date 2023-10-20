@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Lab01Lib.Subject>
+@{
+    ViewData["title"] = "Index";
+}
+<br />
+<div>
+    <h6>
+        <a asp-action="Create">Create new</a>
+    </h6>
+    <h1>List of Subjects</h1>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Subject Fee</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Code</td>   
+                <td>@item.Name</td>   
+                <td>@item.Fee</td>
+            </tr>
+        }
+    </table>
+</div>
