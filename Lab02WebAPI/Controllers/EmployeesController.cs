@@ -21,5 +21,28 @@ namespace Lab02WebAPI.Controllers
         {
             return await _services.GetEmployees();
         }
+
+        [HttpGet("{id}")]
+        public async Task<Employee> GetEmployees(string id)
+        {
+            return await _services.GetEmployee(id);
+        }
+        [HttpPost()]
+        public async Task<Employee> PostEmployees(Employee newEmyploee)
+        {
+            return await _services.PostEmployee(newEmyploee);
+        }
+
+        [HttpPut()]
+        public async Task<Employee> PutEmployee(Employee editEmployee)
+        {
+            return await _services.PutEmployee(editEmployee);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<Employee> DeleteEmployee(string id)
+        {
+            return await _services.DeleteEmployee(id);
+        }
     }
 }
