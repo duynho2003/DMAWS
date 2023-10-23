@@ -59,7 +59,7 @@ namespace Lab02WebAPI.Services
 
         public async Task<Employee> PutEmployee(Employee editEmployee)
         {
-            string query = "UPDATE Employee SET name=@name,phone=@phone WHERE id=@id";
+            string query = "UPDATE Employee SET name=@name,phone=@phone,id=@id";
             using (var _db = db.setConnectDB())
             {
                 await _db.OpenAsync(); // mở kết nối db
