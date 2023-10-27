@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lab04
 {
+    [Table("Orders")]
     public class Orders
     {
         [Key]
@@ -18,6 +19,7 @@ namespace Lab04
         public string? ProductName { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+        [ForeignKey("CustomerId")]
         public Customers? Customers { get; set; }
 
     }
