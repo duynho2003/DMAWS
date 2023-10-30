@@ -1,8 +1,12 @@
 using Lab05WebAPI.DB_Helper;
+using Lab05WebAPI.Repository;
+using Lab05WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Connect to DB
 builder.Services.AddDbContext<DatabaseContext>();
+//DI
+builder.Services.AddScoped<IUserRepository, UserServices>();
 // Add services to the container.
 
 builder.Services.AddControllers();
