@@ -1,23 +1,32 @@
 ﻿using Lab04;
+using Lab04WebAPI.DB_Helper;
 using Lab04WebAPI.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lab04WebAPI.Service
 {
     public class OrderServices : IOrderRepository
     {
-        public Task<List<Orders>> GetOrdersAsync()
+        private DatabaseContext _db;
+        public OrderServices(DatabaseContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
+        }
+        public async Task<Orders> GetOrdersAsync(int id)
+        {
+            return await _db.Orders.FindAsync(id);
         }
 
-        public Task<Orders> GetOrdersAsync(int id)
+        public async Task<List<Orders>> GetOrdersAsync()
         {
-            throw new NotImplementedException();
+            return await _db.Orders.ToListAsync();
         }
 
-        public Task<bool> PostOrdersAsync(Orders newOrders)
+        public async Task<bool> PostOrdersAsync(Orders newOrders)
         {
-            throw new NotImplementedException();
+            await _db.Orders.AddAsync(newOrders);
+            await _db.SaveChangesAsync();
+            return true;
         }
     }
 }

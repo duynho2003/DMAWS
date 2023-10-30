@@ -4,7 +4,7 @@ using Lab04WebAPI.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//khai bao ket noi
 builder.Services.AddDbContext<DatabaseContext>(options=>options.UseSqlServer(
     builder.Configuration.GetConnectionString("ConnectDB")));
 //khai bao DI
