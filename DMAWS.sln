@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab02WebApp", "Lab02WebApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableStorage", "TableStorage\TableStorage.csproj", "{0B5BA933-D519-4D7C-9B12-0E10013335AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04", "Lab04\Lab04.csproj", "{B2C1F4DF-4ECA-44B9-8074-8B3FE99C8F5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04", "Lab04\Lab04.csproj", "{B2C1F4DF-4ECA-44B9-8074-8B3FE99C8F5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04WebAPI", "Lab04WebAPI\Lab04WebAPI.csproj", "{83EA8B41-4925-48C5-83A7-95878534AA14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04WebAPI", "Lab04WebAPI\Lab04WebAPI.csproj", "{83EA8B41-4925-48C5-83A7-95878534AA14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04WebApp", "Lab04WebApp\Lab04WebApp.csproj", "{AB6D5618-22F8-43CE-B366-5E0D1AAC61F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{83EA8B41-4925-48C5-83A7-95878534AA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EA8B41-4925-48C5-83A7-95878534AA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EA8B41-4925-48C5-83A7-95878534AA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6D5618-22F8-43CE-B366-5E0D1AAC61F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6D5618-22F8-43CE-B366-5E0D1AAC61F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6D5618-22F8-43CE-B366-5E0D1AAC61F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6D5618-22F8-43CE-B366-5E0D1AAC61F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
