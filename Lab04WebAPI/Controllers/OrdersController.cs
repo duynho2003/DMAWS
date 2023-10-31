@@ -16,21 +16,21 @@ namespace Lab04WebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public Task<List<Orders>> Get(int? customerId)
         {
-            return Ok(_ordersRepository.GetOrdersAsync());
+            return _ordersRepository.GetOrdersAsync(customerId);
         }
-        
+
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public Task<Orders> Get(int id)
         {
-            return Ok(_ordersRepository.GetOrdersAsync(id));
+            return _ordersRepository.GetOrderAsync(id);
         }
 
         [HttpPost]
-        public IActionResult Post(Orders orders)
+        public Task<bool> Post(Orders orders)
         {
-            return Ok(_ordersRepository.PostOrdersAsync(orders));
+            return _ordersRepository.PostOrdersAsync(orders);
         }
     }
 }

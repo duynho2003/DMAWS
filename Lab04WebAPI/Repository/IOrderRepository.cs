@@ -4,8 +4,8 @@ namespace Lab04WebAPI.Repository
 {
     public interface IOrderRepository
     {
-        Task<List<Orders>> GetOrdersAsync();
-        Task<Orders> GetOrdersAsync(int id);
+        Task<List<Orders>> GetOrdersAsync(int? customerId);
+        Task<Orders> GetOrderAsync(int id);
         Task<bool> PostOrdersAsync(Orders newOrders);
     }
 }

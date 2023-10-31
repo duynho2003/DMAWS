@@ -12,14 +12,30 @@ namespace Lab04WebAPI.Service
         {
             _db = db;
         }
-        public async Task<Orders> GetOrdersAsync(int id)
+        public async Task<Orders> GetOrderAsync(int id)
         {
             return await _db.Orders.FindAsync(id);
         }
 
-        public async Task<List<Orders>> GetOrdersAsync()
+        //public List<Orders> Orders { get; set; }
+        public async Task<List<Orders>> GetOrdersAsync(int? customerId)
         {
-            return await _db.Orders.ToListAsync();
+
+            if (customerId == null)
+            {
+                var model = await _db.Orders.Include(c => c.Customers)
+              //.ThenInclude(o => o!.Orders)
+              .OrderBy(i => i.OrderDate)
+              //.AsNoTracking()
+              .ToListAsync();
+                return model;
+            }
+            else
+            {
+                var order = await _db.Orders.Include(c => c.Customers)
+                   .Where(f => f.CustomerId == customerId).ToListAsync();
+                return order;
+            }
         }
 
         public async Task<bool> PostOrdersAsync(Orders newOrders)

@@ -16,9 +16,9 @@ namespace Lab04WebAPI.Controllers
         }
             
         [HttpGet]
-        public async Task<List<Customers>> Get()
+        public Task<List<Customers>> Get()
         {
-            return await _customerRepository.GetCustomerAsync();
+            return _customerRepository.GetCustomersAsync();
         }
 
         [HttpPost]

@@ -12,20 +12,10 @@ namespace Lab04WebAPI.Service
         {
             _db = db;
         }
-        public Task<List<Customers>> GetCustomerAsync()
+        public async Task<List<Customers>> GetCustomersAsync()
         {
-            //var res = await _db.Customers.Include(c=>c.Orders).ToListAsync();
-            var res = _db.Customers.ToListAsync();
-            //var res = _db.Customers.Include(c => c.Orders);
-            //var res = from c in _db.Customers
-            //          join o in _db.Orders
-            //          on c.CustomerId equals o.CustomerId
-            //          select new
-            //          {
-            //              Customers=c,
-            //              Orders=o,
-            //          };
-            return res;
+            return await _db.Customers.Include(i => i.Orders)
+                           .OrderBy(c => c.CustomerName).ToListAsync();//eager loading
         }
 
         public async Task<bool> PostCustomersAsync(Customers newCustomer)
