@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Lab06Lib.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movie List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form>
+    <input type="text" name="mname" placeholder="Enter movie name" />
+    <input type="submit" value="search" class="btn-info" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.year)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
