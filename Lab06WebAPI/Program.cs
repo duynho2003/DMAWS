@@ -1,5 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
+using Lab06WebAPI.DB_Helper;
+using Lab06WebAPI.Repository;
+using Lab06WebAPI.Services;
 
+var builder = WebApplication.CreateBuilder(args);
+//khai bao ket noi
+builder.Services.AddDbContext<DatabaseContext>();
+//khai bao DI
+builder.Services.AddScoped<IMovieRepository, MovieServices>();
 // Add services to the container.
 
 builder.Services.AddControllers();

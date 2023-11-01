@@ -6,8 +6,8 @@ namespace Lab06WebAPI.Repository
     {
         Task<IEnumerable<Movie>> findAll();
         Task<Movie> findOne(int id);
-        Task<Movie> createMovie(Movie newMovie);
-        Task<Movie> updateMovie(Movie editMovie);
-        Task<Movie> deleteMovie(int id);
+        Task<bool> createMovie(Movie newMovie);
+        Task<bool> updateMovie(Movie editMovie);
+        Task<bool> deleteMovie(int id);
     }
 }
