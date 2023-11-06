@@ -1,5 +1,11 @@
+using Lab07WebAPI.Models;
+using Lab07WebAPI.Repository;
+using Lab07WebAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<DmawsdbContext>();
+builder.Services.AddScoped<ITrans, TransactionServices>();
 // Add services to the container.
 
 builder.Services.AddControllers();

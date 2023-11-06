@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab07WebAPI.Models;
 
-public partial class DmawsdbContext : DbContext
+public class DmawsdbContext : DbContext
 {
     public DmawsdbContext()
     {
@@ -67,8 +67,8 @@ public partial class DmawsdbContext : DbContext
                 .HasConstraintName("FK__tbTransactio__no__0D7A0286");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        // OnModelCreatingPartial(modelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    // partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
