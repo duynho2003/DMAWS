@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab06Lib", "Lab06Lib\Lab06L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab06WebAPI", "Lab06WebAPI\Lab06WebAPI.csproj", "{D11DE9C0-914B-4B21-A670-4A4C0A347FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab06WebApp", "Lab06WebApp\Lab06WebApp.csproj", "{A6EEA806-1693-43A6-BFD6-842EF3886E6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab06WebApp", "Lab06WebApp\Lab06WebApp.csproj", "{A6EEA806-1693-43A6-BFD6-842EF3886E6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab07Lib", "Lab07Lib\Lab07Lib.csproj", "{01A974E0-BEF2-4E70-9EBA-25D7C7B6DA8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +106,10 @@ Global
 		{A6EEA806-1693-43A6-BFD6-842EF3886E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6EEA806-1693-43A6-BFD6-842EF3886E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6EEA806-1693-43A6-BFD6-842EF3886E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A974E0-BEF2-4E70-9EBA-25D7C7B6DA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A974E0-BEF2-4E70-9EBA-25D7C7B6DA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A974E0-BEF2-4E70-9EBA-25D7C7B6DA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A974E0-BEF2-4E70-9EBA-25D7C7B6DA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
