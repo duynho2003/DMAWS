@@ -10,5 +10,6 @@ namespace Lab07Lib
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string? no { get; set; }
         public int pincode { get; set; }
+        public ICollection<Transactions>? Transactions { get; set; }
     }
 }
