@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Lab07WebApp.Models.TbTransaction>
+
+@{
+    ViewData["Title"] = "DisplayTran";
+}
+
+<h2>The XYZ online Banking</h2>
+<h3>
+    Welcom to @Context.Session.GetString("accNo")
+</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trandate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Withdraw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var balance = decimal.Parse("0");
+            if (Model.Any())
+            {
+                balance = Model.Last().Balance ?? 0;
+            }
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Trandate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deposit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Withdraw)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Balance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+<p>
+    @Html.ActionLink("New Transaction", "NewTransaction", new { balance = balance })
+</p>
