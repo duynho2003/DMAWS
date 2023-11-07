@@ -19,13 +19,13 @@ namespace Lab07WebAPI.Controllers
         [ActionName("GetTransaction")]
         public async Task<IEnumerable<TbTransaction>> GetTransaction()
         {
-            return await trans.GetTransactions();
+            return await trans.GetTbTransactions();
         }
 
         [HttpPost]
-        public async Task<IEnumerable<TbTransaction>> PostTransaction(TbTransaction transaction)
+        public async Task<TbTransaction> PostTransactions(TbTransaction transaction)
         {
-            return await trans.GetTransactions();
+            return await trans.PostTransaction(transaction);
         }
     }
 }

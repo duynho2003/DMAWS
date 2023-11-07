@@ -19,7 +19,7 @@ namespace Lab07WebAPI.Controllers
         [ActionName("GetAccounts")]
         public async Task<IEnumerable<TbAccount>> GetAccounts() 
         {
-            return await trans.GetAccounts();
+            return await trans.GetTbAccounts();
         }
     }
 }

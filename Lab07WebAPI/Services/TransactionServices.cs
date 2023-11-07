@@ -11,19 +11,19 @@ namespace Lab07WebAPI.Services
         {
             _db = db;
         }
-        public async Task<List<TbAccount>> GetAccounts()
+        public async Task<List<TbAccount>> GetTbAccounts()
         {
             return await _db.TbAccounts.ToListAsync();
         }
 
-        public async Task<List<TbTransaction>> GetTransactions()
+        public async Task<List<TbTransaction>> GetTbTransactions()
         {
             return await _db.TbTransactions.ToListAsync();
         }
 
         public async Task<TbTransaction> PostTransaction(TbTransaction transaction)
         {
-            await _db.TbTransactions.AddAsync(transaction);
+            await _db.TbTransactions.AddRangeAsync(transaction);
             await _db.SaveChangesAsync();
             return transaction;
         }

@@ -4,8 +4,8 @@ namespace Lab07WebAPI.Repository
 {
     public interface ITrans
     {
-        Task<List<TbAccount>> GetAccounts();
-        Task<List<TbTransaction>> GetTransactions();
+        Task<List<TbAccount>> GetTbAccounts();
+        Task<List<TbTransaction>> GetTbTransactions();
         Task<TbTransaction> PostTransaction(TbTransaction transaction);
     }
 }
