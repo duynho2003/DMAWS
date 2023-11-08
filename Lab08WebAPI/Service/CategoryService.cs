@@ -13,7 +13,8 @@ namespace Lab08WebAPI.Service
         }
         public async Task<IEnumerable<Category>> GetCategories()
         {
-            return await _db.Categories.ToListAsync();
+            return await _db.Categories.Include(p=>p.Products)
+                        .OrderBy(c=>c.CategoryName).ToListAsync();
         }
 
         public async Task<bool> PostCategories(Category newCategories)

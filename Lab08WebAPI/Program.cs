@@ -1,5 +1,17 @@
-var builder = WebApplication.CreateBuilder(args);
+using Lab08WebAPI.Models;
+using Lab08WebAPI.Repository;
+using Lab08WebAPI.Service;
+using System.Text.Json.Serialization;
 
+var builder = WebApplication.CreateBuilder(args);
+//khai bao ket noi
+builder.Services.AddDbContext<DmawsdbContext>();
+//khai bao DI
+builder.Services.AddScoped<ICategoryRepository, CategoryService>();
+builder.Services.AddScoped<IProductRepository, ProductService>();
+//khai bao Eagger loading .net 6
+builder.Services.AddControllersWithViews().AddJsonOptions(
+    options => options.JsonSerializerOptions.ReferenceHandler= ReferenceHandler.IgnoreCycles);
 // Add services to the container.
 
 builder.Services.AddControllers();
