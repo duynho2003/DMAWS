@@ -43,13 +43,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab07WCF", "Lab07WCF\Lab07W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab07WebApp", "Lab07WebApp\Lab07WebApp.csproj", "{1132AB26-887F-475D-9AAF-7A32EA1EA3B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08AzureFunction", "Lab08AzureFunction\Lab08AzureFunction.csproj", "{6E31DDBA-6DFE-426E-B261-061FEF84D2AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08AzureFunction", "Lab08AzureFunction\Lab08AzureFunction.csproj", "{6E31DDBA-6DFE-426E-B261-061FEF84D2AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08AzureFunctionApp", "Lab08AzureFunctionApp\Lab08AzureFunctionApp.csproj", "{080F0347-263C-441B-892D-B15D0415355B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08AzureFunctionApp", "Lab08AzureFunctionApp\Lab08AzureFunctionApp.csproj", "{080F0347-263C-441B-892D-B15D0415355B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08WebAPI", "Lab08WebAPI\Lab08WebAPI.csproj", "{D4EE78A2-BA08-4684-AB10-EE332DB3C08C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08WebAPI", "Lab08WebAPI\Lab08WebAPI.csproj", "{D4EE78A2-BA08-4684-AB10-EE332DB3C08C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08WebApp", "Lab08WebApp\Lab08WebApp.csproj", "{2900935F-1B08-4D77-87E9-864FA38B849D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08WebApp", "Lab08WebApp\Lab08WebApp.csproj", "{2900935F-1B08-4D77-87E9-864FA38B849D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab09Lib", "Lab09Lib\Lab09Lib.csproj", "{34DE0040-690A-44F5-89E9-8C1E77F7164E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +154,10 @@ Global
 		{2900935F-1B08-4D77-87E9-864FA38B849D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2900935F-1B08-4D77-87E9-864FA38B849D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2900935F-1B08-4D77-87E9-864FA38B849D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DE0040-690A-44F5-89E9-8C1E77F7164E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DE0040-690A-44F5-89E9-8C1E77F7164E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DE0040-690A-44F5-89E9-8C1E77F7164E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DE0040-690A-44F5-89E9-8C1E77F7164E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

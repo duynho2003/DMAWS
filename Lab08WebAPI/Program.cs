@@ -9,7 +9,7 @@ builder.Services.AddDbContext<DmawsdbContext>();
 //khai bao DI
 builder.Services.AddScoped<ICategoryRepository, CategoryService>();
 builder.Services.AddScoped<IProductRepository, ProductService>();
-//khai bao Eagger loading .net 6
+//khai bao Eager loading .net 6
 builder.Services.AddControllersWithViews().AddJsonOptions(
     options => options.JsonSerializerOptions.ReferenceHandler= ReferenceHandler.IgnoreCycles);
 // Add services to the container.
