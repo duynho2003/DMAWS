@@ -11,7 +11,7 @@ namespace Lab09WebAPI.Db_Helper
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            string str = "server=LAPTOP-PH1AFEK8\\SQLEXPRESS;database=DMAWSDB;uid=sa;pwd=123;TrustServerCertificate=true";
+            string str = "server=LAPTOP-PH1AFEK8\\SQLEXPRESS;database=Lab09DB;uid=sa;pwd=123;TrustServerCertificate=true";
             optionsBuilder.UseSqlServer(str);
         }
     }
