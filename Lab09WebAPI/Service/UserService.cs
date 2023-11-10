@@ -37,9 +37,9 @@ namespace Lab09WebAPI.Service
         {
             var user = await _db.Users.SingleOrDefaultAsync(
                     u => u.username!.Equals(newUser.username));
-            if (user != null) 
+            if (user == null) 
             {
-                await _db.Users.AddAsync(user);
+                await _db.Users.AddAsync(newUser);
                 await _db.SaveChangesAsync();
                 return true;
             }
