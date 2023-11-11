@@ -1,0 +1,17 @@
+﻿@model Lab09Lib.Shipper
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h2>Are you sure you want to delete this?</h2>
+<h3 style="color:red">
+    @ViewBag.msg
+</h3>
+<form asp-action="Delete">
+        <label>Enter shipper id:</label>
+        <input type="number" name="id" placeholder="Enter shipper id..." />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+</form>
