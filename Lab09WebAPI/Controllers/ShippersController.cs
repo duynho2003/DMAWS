@@ -27,7 +27,7 @@ namespace Lab09WebAPI.Controllers
             return await _shipperRepository.PostShipper(shipper);
         }
 
-        [HttpDelete()]
+        [HttpDelete("{id}")]
         public async Task<bool> Delete(int id)
         {
             return await _shipperRepository.DeleteShipper(id);
