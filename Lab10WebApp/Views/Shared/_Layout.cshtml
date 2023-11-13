@@ -27,6 +27,24 @@
                         </li>
                     </ul>
                 </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @if (Context.Session.GetString("code") == null)
+                        {
+                            <li>
+                                <a class="nav-link text-dark" asp-controller="Employees" asp-action="Login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <ui>Hi @Context.Session.GetString("code")</ui>
+                            <li>
+                                <a class="nav-link text-dark" asp-controller="Employees" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

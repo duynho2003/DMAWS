@@ -43,7 +43,7 @@ namespace Lab10WebAPI.Controllers
             var employee = await _db.Employees.FirstOrDefaultAsync(e => e.Code.Equals(code));
             if (employee != null) 
             {
-                if (employee!.Password!.Equals(pass))
+                if (employee.Password!.Equals(pass))
                 {
                     return employee;
                 }
@@ -65,6 +65,22 @@ namespace Lab10WebAPI.Controllers
             if (employee != null)
             {
                 employee.Password = "Password@123";
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        [HttpDelete("{code}")]
+        public async Task<bool> Delete(string code)
+        {
+            var emp = await _db.Employees.SingleOrDefaultAsync(s => s.Code.Equals(code));
+            if (emp != null)
+            {
+                _db.Employees.Remove(emp);
                 await _db.SaveChangesAsync();
                 return true;
             }
