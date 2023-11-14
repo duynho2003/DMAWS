@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Pretest01WebApp.Models.TblEmp>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>List of Employees</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Salary</td>
+            <td>
+                @Html.ActionLink("Update","Update",new {EmpId=item.EmpId})
+            </td>
+        </tr>
+    }
+</table>

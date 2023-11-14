@@ -1,0 +1,36 @@
+﻿@model Pretest01WebApp.Models.TblEmp
+@{
+    ViewData["Title"] = "Update";
+}
+<div>
+    <h1>Update salary</h1>
+</div>
+<div>
+<form asp-action="Update" method="post">
+    <div>
+        @Html.LabelFor(model=>model.EmpId)
+            <input asp-for="EmpId" readonly="readonly" />
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.FirstName)
+            <input asp-for="FirstName" readonly="readonly" />
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.LastName)
+            <input asp-for="LastName" readonly="readonly" />
+    </div>
+    <div>
+        @Html.LabelFor(model=>model.Salary)
+        @Html.EditorFor(model=>model.Salary)
+        @Html.ValidationMessageFor(model=>model.Salary)
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Update" name="submits" class="btn-warning"
+               onclick="return confirm('Are you sure to Update?')" />
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>
+</div>
