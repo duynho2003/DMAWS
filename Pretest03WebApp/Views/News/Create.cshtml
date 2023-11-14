@@ -1,0 +1,38 @@
+﻿@model Pretest03WebApp.Models.TbNews
+@{
+    ViewBag.Title = "Create";
+}
+<div>
+    <h1 style="color:blue">Add News</h1>
+</div>
+<h3 style="color:red">
+    @ViewBag.msg
+</h3>
+<div>
+    <form asp-action="Create" method="post">
+        <div>
+            @Html.LabelFor(model=>model.NewsId):
+            @Html.EditorFor(model=>model.NewsId)
+            @Html.ValidationMessageFor(model=>model.NewsId)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.NewsContent):
+            @Html.EditorFor(model=>model.NewsContent)
+            @Html.ValidationMessageFor(model=>model.NewsContent)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.DateOfPublish):
+            @Html.EditorFor(model=>model.DateOfPublish)
+            @Html.ValidationMessageFor(model=>model.DateOfPublish)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Insert" class="btn btn-primary" />
+            <input type="reset" value="Reset" class="btn btn-danger" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to main menu</a>
+</div>

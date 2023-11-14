@@ -1,0 +1,22 @@
+﻿@model Pretest03WebApp.Models.TbNews
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 style="color:blue">Delete News</h1>
+
+<h2>Input NewsId and click "Delete" button delete the News</h2>
+<h3 style="color:red">
+    @ViewBag.msg
+</h3>
+<form asp-action="Delete">
+    <label>NewsId:</label>
+    <input name="NewsId" placeholder="Enter NewsID..."/>
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    @Html.ValidationMessageFor(model=>model.NewsId)
+</form>
+
+<div>
+    <a asp-action="Index">Back to main menu</a>
+</div>
