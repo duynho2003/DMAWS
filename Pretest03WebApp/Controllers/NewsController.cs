@@ -34,7 +34,7 @@ namespace Pretest03WebApp.Controllers
                 }
                 else
                 {
-                    ViewBag.msg = "Fail...";
+                    ViewBag.msg = "Create failed!";
                 }
             }
             catch (Exception ex)
