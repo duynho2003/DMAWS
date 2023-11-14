@@ -42,6 +42,22 @@ namespace Pretest01WebAPI.Controllers
             return await _db.TblEmps.ToListAsync();
         }
 
+        [HttpPost()]
+        public async Task<bool> PostEmployee(TblEmp newEmp)
+        {
+            var emp = await _db.TblEmps.FirstOrDefaultAsync(e => e.EmpId.Equals(newEmp.EmpId));
+            if (emp == null)
+            {
+                await _db.TblEmps.AddAsync(newEmp);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         [HttpPut()]
         public async Task<bool> updateSalary(TblEmp upemp)
         {
@@ -56,6 +72,20 @@ namespace Pretest01WebAPI.Controllers
             { 
                 return false; 
             }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<bool> Delete(string id)
+        {
+
+            var emp = await _db.TblEmps.SingleOrDefaultAsync(e => e.EmpId == id);
+            if (emp != null)
+            {
+                _db.TblEmps.Remove(emp);
+                await _db.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
     }
 }

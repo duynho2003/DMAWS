@@ -2,6 +2,10 @@
 @{
     ViewBag.Title = "Index";
 }
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
 <h2>List of Employees</h2>
 @*Search*@
 <form asp-action="Index">
@@ -26,7 +30,9 @@
             <td>@item.LastName</td>
             <td>@item.Salary</td>
             <td>
-                @Html.ActionLink("Update", "Update", new { id=item.EmpId })
+                @Html.ActionLink("Update", "Update", new { id=item.EmpId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.EmpId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.EmpId })
             </td>
         </tr>
     }

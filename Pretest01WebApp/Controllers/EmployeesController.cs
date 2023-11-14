@@ -103,5 +103,57 @@ namespace Pretest01WebApp.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(TblEmp emp)
+        {
+            try
+            {
+                var model = httpClient.PostAsJsonAsync<TblEmp>(url, emp).Result;
+                if (ModelState.IsValid)
+                {
+                    if (model.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                }
+                else
+                {
+                    ViewBag.msg = "Fail...";
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Details(string id)
+        {
+            var employees = JsonConvert.DeserializeObject<IEnumerable<TblEmp>>(httpClient.GetStringAsync(url).Result);
+            var model = employees!.SingleOrDefault(e => e.EmpId == id);
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(string id)
+        {
+            var employees = JsonConvert.DeserializeObject<IEnumerable<TblEmp>>(httpClient.GetStringAsync(url).Result);
+            var model = employees!.SingleOrDefault(e => e.EmpId == id);
+            var status = httpClient.DeleteAsync(url + id).Result;
+            if (status.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
