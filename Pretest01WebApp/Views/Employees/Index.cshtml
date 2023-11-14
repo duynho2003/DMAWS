@@ -3,12 +3,20 @@
     ViewBag.Title = "Index";
 }
 <h2>List of Employees</h2>
+@*Search*@
+<form asp-action="Index">
+    <label>Search Employee</label>
+    <input type="text" name="fid" placeholder="Enter id..." />
+    <input type="submit" value="Search" />
+</form>
+
 <table class="table">
     <tr>
         <th>ID</th>
         <th>First name</th>
         <th>Last name</th>
         <th>Salary</th>
+        <th>Action</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -18,7 +26,7 @@
             <td>@item.LastName</td>
             <td>@item.Salary</td>
             <td>
-                @Html.ActionLink("Update","Update",new {EmpId=item.EmpId})
+                @Html.ActionLink("Update", "Update", new { id=item.EmpId })
             </td>
         </tr>
     }

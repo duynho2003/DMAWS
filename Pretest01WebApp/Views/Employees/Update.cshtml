@@ -1,36 +1,50 @@
 ﻿@model Pretest01WebApp.Models.TblEmp
+
 @{
     ViewData["Title"] = "Update";
 }
-<div>
-    <h1>Update salary</h1>
+
+<h1>Update</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpId" class="control-label"></label>
+                <input asp-for="EmpId" name="id" class="form-control" readonly />
+                <span asp-validation-for="EmpId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" readonly />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" readonly />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" name="salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
+
 <div>
-<form asp-action="Update" method="post">
-    <div>
-        @Html.LabelFor(model=>model.EmpId)
-            <input asp-for="EmpId" readonly="readonly" />
-    </div>
-    <div>
-        @Html.LabelFor(model=>model.FirstName)
-            <input asp-for="FirstName" readonly="readonly" />
-    </div>
-    <div>
-        @Html.LabelFor(model=>model.LastName)
-            <input asp-for="LastName" readonly="readonly" />
-    </div>
-    <div>
-        @Html.LabelFor(model=>model.Salary)
-        @Html.EditorFor(model=>model.Salary)
-        @Html.ValidationMessageFor(model=>model.Salary)
-    </div>
-    <br />
-    <div>
-        <input type="submit" value="Update" name="submits" class="btn-warning"
-               onclick="return confirm('Are you sure to Update?')" />
-    </div>
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-</form>
+    <a asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -46,35 +46,56 @@ namespace Pretest01WebApp.Controllers
             return RedirectToAction("Login");
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string fid)
         {
-            var model = JsonConvert.DeserializeObject<IEnumerable<TblEmp>>(
-                                        httpClient.GetStringAsync(url).Result);
-            return View(model);
+            var json = httpClient.GetStringAsync(url).Result;
+            var model = JsonConvert.DeserializeObject<IEnumerable<TblEmp>>(json);
+
+            if (fid != null)
+            {
+                var emp = model!.SingleOrDefault(e => e.EmpId == fid);
+                if (emp != null)
+                {
+                    model = new List<TblEmp> { emp };
+                    return View(model);
+                }
+                else
+                {
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
         }
 
         [HttpGet]
-        public IActionResult Update(string EmpId)
+        public IActionResult Update(string id)
         {
-            var model = JsonConvert.DeserializeObject<TblEmp>(
-                   httpClient.GetStringAsync(url + EmpId).Result);
+            var employees = JsonConvert.DeserializeObject<IEnumerable<TblEmp>>(httpClient.GetStringAsync(url).Result);
+            if (employees != null)
+            {
+                var model = employees.FirstOrDefault(m => m.EmpId == id);
+                return View(model);
+
+            }
             return View();
         }
 
         [HttpPost]
-        public IActionResult Update(TblEmp upEmp)
+        public async Task<IActionResult> Update(string id, float salary)
         {
             try
             {
-                var model = httpClient.PostAsJsonAsync<TblEmp>(url, upEmp).Result;
-                if (model.IsSuccessStatusCode)
+                var employees = JsonConvert.DeserializeObject<IEnumerable<TblEmp>>(httpClient.GetStringAsync(url).Result);
+                var model = employees!.SingleOrDefault(e => e.EmpId == id);
+                if (model != null)
                 {
-                    return RedirectToAction("Index");
+                    model.Salary = salary;
+                    await httpClient.PutAsJsonAsync(url, model);
                 }
-                else
-                {
-                    return NoContent();
-                }
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
