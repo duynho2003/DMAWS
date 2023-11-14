@@ -34,7 +34,7 @@ namespace Pretest03WebApp.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Fail...");
+                    ViewBag.msg = "Fail...";
                 }
             }
             catch (Exception ex)
