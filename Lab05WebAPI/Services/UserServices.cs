@@ -39,7 +39,7 @@ namespace Lab05WebAPI.Services
             if (user!=null)
             {
                 _db.Users.Remove(user);
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
                 return true;
             }
             else 

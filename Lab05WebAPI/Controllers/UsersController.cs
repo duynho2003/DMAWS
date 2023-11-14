@@ -45,7 +45,7 @@ namespace Lab05WebAPI.Controllers
             return await _userRepository.updateUser(editUser);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<bool> Delete(int id)
         {
             return await _userRepository.deleteUser(id);
