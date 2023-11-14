@@ -14,7 +14,7 @@
     <label>NewsId:</label>
     <input name="NewsId" placeholder="Enter NewsID..."/>
     <input type="submit" value="Delete" class="btn btn-danger" />
-    @Html.ValidationMessageFor(model=>model.NewsId)
+    @Html.ValidationMessageFor(model=>model.NewsId, "", new { @class = "text-danger" })
 </form>
 
 <div>

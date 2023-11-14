@@ -6,10 +6,10 @@ namespace Pretest03WebApp.Models;
 
 public partial class TbNews
 {
-    [Required]
+    [Required(ErrorMessage = "Please enter NewsID.")]
     public string NewsId { get; set; } = null!;
-    [Required]
+    [Required(ErrorMessage = "Please enter NewsContent.")]
     public string? NewsContent { get; set; }
-    [Required]
+    [Required(ErrorMessage = "Please enter Date Of Publish.")]
     public string? DateOfPublish { get; set; }
 }

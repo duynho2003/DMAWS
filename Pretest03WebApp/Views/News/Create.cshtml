@@ -13,17 +13,17 @@
         <div>
             @Html.LabelFor(model=>model.NewsId):
             @Html.EditorFor(model=>model.NewsId)
-            @Html.ValidationMessageFor(model=>model.NewsId)
+            @Html.ValidationMessageFor(model=>model.NewsId, "", new { @class = "text-danger" })
         </div>
         <div>
             @Html.LabelFor(model=>model.NewsContent):
             @Html.EditorFor(model=>model.NewsContent)
-            @Html.ValidationMessageFor(model=>model.NewsContent)
+            @Html.ValidationMessageFor(model=>model.NewsContent, "", new { @class = "text-danger" })
         </div>
         <div>
             @Html.LabelFor(model=>model.DateOfPublish):
             @Html.EditorFor(model=>model.DateOfPublish)
-            @Html.ValidationMessageFor(model=>model.DateOfPublish)
+            @Html.ValidationMessageFor(model=>model.DateOfPublish, "", new { @class = "text-danger" })
         </div>
         <br />
         <div>
