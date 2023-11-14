@@ -22,7 +22,7 @@
         </div>
         <div>
             @Html.LabelFor(model=>model.DateOfPublish):
-            @Html.EditorFor(model=>model.DateOfPublish)
+            <input type="date" id="DateOfPublish" name="DateOfPublish" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
             @Html.ValidationMessageFor(model=>model.DateOfPublish, "", new { @class = "text-danger" })
         </div>
         <br />

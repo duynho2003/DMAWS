@@ -8,8 +8,8 @@ create table tbNews
 	DateOfPublish varchar(20),
 )
 
-insert into tbNews values('News202301','Microsoft','2023-10-03')
-insert into tbNews values('News202302','Microsoft','2023-10-03')
-insert into tbNews values('News202303','Microsoft','2023-10-03')
+insert into tbNews values('N01','Microsoft Windows 7','2009-10-22')
+insert into tbNews values('N02','Mac OS X Snow Leopard','2009-08-28')
+insert into tbNews values('N03','Windows 11','2021-10-05')
 ----------
 select * from tbNews
