@@ -59,9 +59,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab10WebAPI", "Lab10WebAPI\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab10WebApp", "Lab10WebApp\Lab10WebApp.csproj", "{375D6513-1504-4BC3-A0D2-8D321CD7B5A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pretest03WebAPI", "Pretest03WebAPI\Pretest03WebAPI.csproj", "{28BF291C-96A0-4237-92CC-C4A52B666A9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pretest03WebAPI", "Pretest03WebAPI\Pretest03WebAPI.csproj", "{28BF291C-96A0-4237-92CC-C4A52B666A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pretest03WebApp", "Pretest03WebApp\Pretest03WebApp.csproj", "{8DC2192D-53BA-4052-A408-F11606800CEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pretest03WebApp", "Pretest03WebApp\Pretest03WebApp.csproj", "{8DC2192D-53BA-4052-A408-F11606800CEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pretest01WebAPI", "Pretest01WebAPI\Pretest01WebAPI.csproj", "{119F2CFF-C684-4506-8136-2B74C3755557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -189,6 +191,10 @@ Global
 		{8DC2192D-53BA-4052-A408-F11606800CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DC2192D-53BA-4052-A408-F11606800CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DC2192D-53BA-4052-A408-F11606800CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119F2CFF-C684-4506-8136-2B74C3755557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119F2CFF-C684-4506-8136-2B74C3755557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119F2CFF-C684-4506-8136-2B74C3755557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119F2CFF-C684-4506-8136-2B74C3755557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
