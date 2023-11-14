@@ -42,7 +42,7 @@ namespace Pretest01WebAPI.Controllers
             return await _db.TblEmps.ToListAsync();
         }
 
-        [HttpPost()]
+        [HttpPut()]
         public async Task<bool> updateSalary(TblEmp upemp)
         {
             var emp = await _db.TblEmps.SingleOrDefaultAsync(u => u.EmpId.Equals(upemp.EmpId));
