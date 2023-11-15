@@ -9,12 +9,12 @@
     <form asp-action="Create" method="post">
         <div>
             @Html.LabelFor(model=>model.Name)
-            <input type="text" name="name" required />
+            @Html.EditorFor(model=>model.Name)
             @Html.ValidationMessageFor(model=>model.Name)
         </div>
         <div>
             @Html.LabelFor(model=>model.Price)
-            <input type="number" name="price" min="0" required />
+            @Html.EditorFor(model=>model.Price)
             @Html.ValidationMessageFor(model=>model.Price)
         </div>
         <div>
