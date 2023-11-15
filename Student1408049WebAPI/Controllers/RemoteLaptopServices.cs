@@ -16,7 +16,7 @@ namespace Student1408049WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Laptop>> GetNews()
+        public async Task<IEnumerable<Laptop>> GetLaptopList()
         {
             return await _db.Laptops.ToListAsync();
         }
