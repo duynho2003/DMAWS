@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Student1408049WebApp.Models.Laptop>
+@{
+    ViewBag.Title = "Index";
+}
+<h4>
+    <a asp-action="Create">Create New</a>
+</h4>
+<h2>List all Laptops</h2>
+<table class="table">
+    <tr>
+        <th>LaptopName</th>
+        <th>UnitPrice</th>
+        <th>FingerPrint</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Fingerprint</td>
+            <td>
+                @Html.ActionLink("Remove","Delete",new {code=item.LaptopId})
+            </td>
+        </tr>
+    }
+</table>

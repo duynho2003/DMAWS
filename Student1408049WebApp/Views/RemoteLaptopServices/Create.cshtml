@@ -1,0 +1,33 @@
+﻿@model Student1408049WebApp.Models.Laptop
+@{
+    ViewBag.Title = "create";
+}
+<div>
+    <h1>Create new Laptop</h1>
+</div>
+<div>
+    <form asp-action="Create" method="post">
+        <div>
+            @Html.LabelFor(model=>model.Name)
+            @Html.EditorFor(model=>model.Name)
+            @Html.ValidationMessageFor(model=>model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.Price)
+            @Html.EditorFor(model=>model.Price)
+            @Html.ValidationMessageFor(model=>model.Price)
+        </div>
+        <div>
+            @Html.LabelFor(model=>model.Fingerprint)
+            @Html.EditorFor(model=>model.Fingerprint)
+            @Html.ValidationMessageFor(model=>model.Fingerprint)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Create" class="btn-primary" />
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

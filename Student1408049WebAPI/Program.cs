@@ -1,4 +1,9 @@
+using Student1408049WebAPI.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//khai bao ket noi
+builder.Services.AddDbContext<StoreDbContext>();
 
 // Add services to the container.
 
